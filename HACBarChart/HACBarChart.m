@@ -18,6 +18,7 @@ CGFloat const constantMarginAxis = 20.0;
 - (void)defaultInit
 {
     _showAxis                   = YES;  // Show axis line
+    _showAxisTitles             = YES;  // Show axis titles
     _showProgressLabel          = NO;   // Show text for bar
     _vertical                   = NO;   // Orientation chart
     _reverse                    = NO;   // Orientation chart
@@ -255,7 +256,7 @@ CGFloat const constantMarginAxis = 20.0;
         }
     }else{
         if (_reverse) {
-            ////// HORIZONTAL RIGTH TO LEFT
+            ////// HORIZONTAL RIGHT TO LEFT
             if (_showAxis) {
                 animationLabel.fromValue  = [NSNumber numberWithFloat:CGRectGetWidth(self.bounds)-_sizeLabelProgress / 2];
                 animationLabel.toValue = @(CGRectGetWidth(self.bounds) - progress - _sizeLabelProgress / 2);
@@ -266,8 +267,8 @@ CGFloat const constantMarginAxis = 20.0;
         }else{
             ////// HORIZONTAL LEFT TO RIGHT
             if (_showAxis) {
-                animationLabel.fromValue  = [NSNumber numberWithFloat:(_sizeLabelProgress + (marginAxis / 2) - 3)];
-                animationLabel.toValue = @(progress + _sizeLabelProgress + (marginAxis / 2)/*ÑAPA*/-3/*ÑAPA*/);
+                animationLabel.fromValue  = [NSNumber numberWithFloat:(_sizeLabelProgress)];
+                animationLabel.toValue = @(progress + _sizeLabelProgress);
             }else{
                 animationLabel.fromValue  = [NSNumber numberWithFloat:(_sizeLabelProgress / 2) + marginAxis];
                 animationLabel.toValue = @((progress + _sizeLabelProgress / 2) + marginAxis);
@@ -304,7 +305,7 @@ CGFloat const constantMarginAxis = 20.0;
         }
     }else{
         if (_reverse) {
-            ////// VERTICAL RIGTH TO LEFT
+            ////// HORIZONTAL RIGHT TO LEFT
             if (_showAxis) {
                 [path moveToPoint:CGPointMake(marginAxis/*-1*/, CGRectGetHeight(self.bounds) - marginAxis + 2)];
                 [path addLineToPoint:CGPointMake(CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) - marginAxis + 2)];
@@ -352,7 +353,7 @@ CGFloat const constantMarginAxis = 20.0;
         }
     }else{
         if (_reverse) {
-            ////// VERTICAL RIGTH TO LEFT
+            ////// VERTICAL RIGHT TO LEFT
             if (_showAxis) {
                 
                 [path moveToPoint:CGPointMake(CGRectGetWidth(self.bounds) /*- 1*/, 0.0)];
@@ -396,7 +397,7 @@ CGFloat const constantMarginAxis = 20.0;
     }
     
     for (i = 0, j = (divider-1); i < divider; i++, j--) {
-        
+        UILabel *lbl;
         if (_vertical) {
             
             // Dot for axis number
@@ -435,7 +436,7 @@ CGFloat const constantMarginAxis = 20.0;
             :
             (frame = CGRectMake(0, ((CGRectGetHeight(self.bounds)-marginAxis)/(divider-1) * i) - 15 / 2, marginAxis - 3, 15));
             
-            UILabel *lbl           = [[UILabel alloc]initWithFrame:frame];
+            lbl = [[UILabel alloc]initWithFrame:frame];
             
             
             if (divider-1==i && _reverse) {
@@ -455,8 +456,6 @@ CGFloat const constantMarginAxis = 20.0;
             lbl.numberOfLines      = 1;
             [lbl setMinimumScaleFactor:5.0/[UIFont labelFontSize]];
             lbl.adjustsFontSizeToFitWidth = YES;
-            
-            [self addSubview:lbl];
             
         }
         else{
@@ -498,7 +497,7 @@ CGFloat const constantMarginAxis = 20.0;
             :
             (frame = CGRectMake(((((CGRectGetWidth(self.bounds)-marginAxis)/(divider-1))) * i)+marginAxis/2, CGRectGetHeight(self.bounds) - (marginAxis-1 )+5, marginAxis - 3, 15));
             
-            UILabel *lbl           = [[UILabel alloc]initWithFrame:frame];
+            lbl           = [[UILabel alloc]initWithFrame:frame];
             
             if ([text isEqualToString:@"0.0"]) {
                 NSLog(@"----------------------------------> 0.0");
@@ -527,8 +526,6 @@ CGFloat const constantMarginAxis = 20.0;
                 
             }
             
-            
-            
             lbl.font               = _progressTextFont;
             lbl.backgroundColor    = [UIColor clearColor];
             lbl.textAlignment      = NSTextAlignmentCenter;
@@ -537,9 +534,9 @@ CGFloat const constantMarginAxis = 20.0;
             [lbl setMinimumScaleFactor:5.0/[UIFont labelFontSize]];
             lbl.adjustsFontSizeToFitWidth = YES;
             
-            [self addSubview:lbl];
-            
         }
+        if (_showAxisTitles)
+            [self addSubview:lbl];
     }
 }
 
