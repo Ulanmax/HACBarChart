@@ -67,6 +67,8 @@ CGFloat const constantMarginAxis = 20.0;
 
 -(void)draw{
     NSLog(@"entraaaa");
+    [self clearChart];
+    [self setNeedsLayout];
 }
 
 
@@ -525,7 +527,7 @@ CGFloat const constantMarginAxis = 20.0;
                 }
                 
             }
-            
+
             lbl.font               = _progressTextFont;
             lbl.backgroundColor    = [UIColor clearColor];
             lbl.textAlignment      = NSTextAlignmentCenter;

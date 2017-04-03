@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11535.1" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11523"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -146,10 +146,10 @@
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MS0-LJ-ly4" customClass="HACBarChart">
-                                <rect key="frame" x="8" y="210" width="177.5" height="267"/>
+                                <rect key="frame" x="8" y="210" width="169" height="267"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgs-lQ-xTb" customClass="HACBarChart">
-                                <rect key="frame" x="168.5" y="210" width="177.5" height="267"/>
+                                <rect key="frame" x="177" y="210" width="169" height="267"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70K-Al-58x" customClass="HACBarChart">
                                 <rect key="frame" x="8" y="28" width="338" height="174"/>
@@ -187,7 +187,6 @@
                             <constraint firstItem="b9t-MB-lJ5" firstAttribute="leading" secondItem="leT-aA-LS0" secondAttribute="trailing" constant="15" id="Uiz-gy-I1o"/>
                             <constraint firstItem="b9t-MB-lJ5" firstAttribute="baseline" secondItem="leT-aA-LS0" secondAttribute="baseline" constant="1" id="ZDx-vs-XCr"/>
                             <constraint firstItem="T6L-Ek-Uft" firstAttribute="top" secondItem="6BN-Td-dgb" secondAttribute="bottom" constant="4" id="ZjI-6S-qak"/>
-                            <constraint firstItem="bgs-lQ-xTb" firstAttribute="leading" secondItem="MS0-LJ-ly4" secondAttribute="trailing" constant="-16.5" id="aqj-aq-lab"/>
                             <constraint firstItem="bgs-lQ-xTb" firstAttribute="top" secondItem="70K-Al-58x" secondAttribute="bottom" constant="8" id="bw7-BP-1uL"/>
                             <constraint firstItem="bgs-lQ-xTb" firstAttribute="height" secondItem="MS0-LJ-ly4" secondAttribute="height" id="c0h-g6-cLm"/>
                             <constraint firstItem="qR0-TI-Ilk" firstAttribute="top" secondItem="DU4-z5-6Sg" secondAttribute="top" id="eol-oR-yX5"/>
@@ -207,7 +206,7 @@
                             <constraint firstItem="HSj-WO-CTY" firstAttribute="firstBaseline" secondItem="leT-aA-LS0" secondAttribute="firstBaseline" id="shf-us-goD"/>
                             <constraint firstItem="HmF-h1-l7z" firstAttribute="trailing" secondItem="IwU-zU-ugU" secondAttribute="trailing" id="tPA-Fa-ED2"/>
                             <constraint firstItem="bgs-lQ-xTb" firstAttribute="width" secondItem="MS0-LJ-ly4" secondAttribute="width" id="uM5-qr-g1e"/>
-                            <constraint firstItem="bgs-lQ-xTb" firstAttribute="leading" secondItem="MS0-LJ-ly4" secondAttribute="trailing" constant="-16.5" id="uMe-QQ-Wji"/>
+                            <constraint firstItem="bgs-lQ-xTb" firstAttribute="leading" secondItem="MS0-LJ-ly4" secondAttribute="trailing" id="uMe-QQ-Wji"/>
                             <constraint firstItem="zpf-jO-DsX" firstAttribute="top" secondItem="MS0-LJ-ly4" secondAttribute="bottom" constant="9" id="unR-DJ-Dp3"/>
                             <constraint firstItem="T6L-Ek-Uft" firstAttribute="trailing" secondItem="6BN-Td-dgb" secondAttribute="trailing" id="z6H-X7-DJB"/>
                             <constraint firstItem="mww-7e-9yw" firstAttribute="trailing" secondItem="b9t-MB-lJ5" secondAttribute="trailing" id="zYl-S8-BZA"/>
